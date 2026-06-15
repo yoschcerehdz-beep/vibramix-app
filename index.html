@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibraMix ⚡ Tu Música</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="neon-nav">
+            <button class="nav-btn active" data-target="home">🏠 Inicio</button>
+            <button class="nav-btn" data-target="vibras">✨ Vibras</button>
+            <button class="nav-btn" data-target="artistas">🎧 Artistas</button>
+        </nav>
+
+        <section id="home" class="tab-content active">
+            <div class="hero-section">
+                <h1 class="neon-title glow-pulse">VIBRAMIX</h1>
+                <p class="subtitle" style="font-size: 1.2rem;">Tu mood. Tus reglas. Tu música. 🎶</p>
+                <div class="hero-card">
+                    <p>Bienvenido a la nueva forma de descubrir música.</p>
+                    <p>👉 Ve a <strong>✨ Vibras</strong> para encontrar tracks que hagan match con tu energía de hoy.</p>
+                    <p>👉 Ve a <strong>🎧 Artistas</strong> para buscar a tus ídolos y escuchar sus top hits en segundos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="vibras" class="tab-content hidden">
+            <div class="section-box">
+                <h2 class="section-title">¿Cuál es la vibe de hoy? ⚡</h2>
+                
+                <select id="mood-selector" class="neon-input">
+                    <option value="">Selecciona tu mood...</option>
+                    <optgroup label="Energía Alta 🔥">
+                        <option value="feliz">Feliz</option>
+                        <option value="contento">Contento / Satisfecho</option>
+                        <option value="alegre">Alegre / Divertido</option>
+                    </optgroup>
+                    <optgroup label="Energía Baja 🌧️">
+                        <option value="triste">Triste / Roto</option>
+                        <option value="melancolico">Melancólico / Nostálgico</option>
+                    </optgroup>
+                    <optgroup label="Romance 💖">
+                        <option value="dedicar">Para Dedicar / Románticas</option>
+                    </optgroup>
+                    <optgroup label="Actividades 🚀">
+                        <option value="estudiar">Para Estudiar / Flow</option>
+                        <option value="entrenar">Para Entrenar / Beast Mode</option>
+                    </optgroup>
+                    <optgroup label="El Squad 🍻">
+                        <option value="amigos">Para Escuchar con Amigos</option>
+                        <option value="familia">Domingo Familiar</option>
+                        <option value="fiesta">De Fiesta / Perreo</option>
+                    </optgroup>
+                </select>
+
+                <table id="mood-table" class="neon-table hidden">
+                    <thead>
+                        <tr>
+                            <th>Track & Artista</th>
+                            <th>Letra</th>
+                            <th>Play 🎵</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mood-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="artistas" class="tab-content hidden">
+            <div class="section-box">
+                <h2 class="section-title">Encuentra a tu Artista 🔍</h2>
+                <div class="search-container">
+                    <input type="text" id="artist-input" class="neon-input" placeholder="Ej: Kenia Os, Bad Bunny, Dua Lipa...">
+                    <button id="search-btn" class="neon-button">Buscar</button>
+                </div>
+
+                <p id="loading-msg" class="hidden subtitle" style="color: #00ffff;">Hackeando los servidores... ⏳</p>
+
+                <div id="artist-results" class="hidden">
+                    <h3 id="artist-name-display" class="highlight-text"></h3>
+                    <p id="artist-genre-display" class="genre-tag"></p>
+                    
+                    <h4 style="color: #a0a0b8; text-align: left;">🔥 Top Tracks (Preview 30s):</h4>
+                    <table class="neon-table">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Play 🎵</th>
+                            </tr>
+                        </thead>
+                        <tbody id="artist-table-body"></tbody>
+                    </table>
+                </div>
+                
+                <p id="artist-error" class="hidden error-text">Oops! No encontramos a ese artista. Intenta escribirlo de otra forma. 💔</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

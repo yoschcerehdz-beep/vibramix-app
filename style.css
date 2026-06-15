@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body {
+    background-color: #05050a;
+    color: #ffffff;
+    font-family: 'Share Tech Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Cambio para que el contenido no quede siempre centrado verticalmente */
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    padding-top: 40px;
+}
+
+.app-container {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* --- ESTILOS DE LA BARRA DE NAVEGACIÓN --- */
+.neon-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    background: rgba(15, 15, 26, 0.8);
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    flex-wrap: wrap; /* Para pantallas pequeñas */
+}
+
+.nav-btn {
+    background: transparent;
+    color: #a0a0b8;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    color: #00ffff;
+}
+
+.nav-btn.active {
+    background: #00ffff;
+    color: #05050a;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+/* --- ANIMACIONES DE PESTAÑAS --- */
+.tab-content {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- ESTILOS DE INICIO --- */
+.hero-section {
+    padding: 40px 20px;
+}
+
+.glow-pulse {
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    from { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
+    to { text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff; }
+}
+
+.hero-card {
+    background: rgba(255, 0, 255, 0.05);
+    border: 1px solid rgba(255, 0, 255, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 30px;
+    text-align: left;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* --- ESTILOS GENERALES (Ya los tenías) --- */
+.neon-title {
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff;
+    margin-bottom: 5px;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+.subtitle { color: #a0a0b8; margin-bottom: 30px; }
+
+.section-box {
+    background: #0f0f1a;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.1);
+    border: 1px solid rgba(255, 0, 255, 0.3);
+    margin-bottom: 30px;
+}
+
+.section-title {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.neon-input {
+    background: #1a1a2e;
+    color: #00ffff;
+    padding: 12px;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+    flex-grow: 1;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.neon-input:focus {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    background: #232342;
+}
+
+.neon-button {
+    background: transparent;
+    color: #ff00ff;
+    border: 1px solid #ff00ff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+    background: rgba(255, 0, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+}
+
+.neon-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.neon-table th, .neon-table td {
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    padding: 12px;
+    vertical-align: middle;
+}
+
+.neon-table th { color: #00ffff; text-transform: uppercase; font-size: 0.9em; }
+
+.highlight-text {
+    color: #00ffff;
+    font-size: 2rem;
+    margin: 10px 0 5px 0;
+    text-align: left;
+}
+
+.genre-tag {
+    display: inline-block;
+    background: rgba(255, 0, 255, 0.2);
+    color: #ff00ff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid #ff00ff;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.lyrics-text { font-style: italic; color: #b3b3cc; font-size: 0.9em; }
+audio { height: 35px; max-width: 150px; outline: none; }
+.hidden { display: none !important; }
+.error-text { color: #ff3366; text-align: left; }
